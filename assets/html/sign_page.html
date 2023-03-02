@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Page</title>
+    <!-- <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css"> -->
+    <!-- <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="../Css/index.css">
+    <link rel="stylesheet" href="../Css/index_style.css">
+
+</head>
+<body>
+    <!-- Container for Login -->
+    <div class=" container w-25 mt-5 rounded p-4" id="login_container" style="background-color: antiquewhite;">
+        <div id="login_div">
+            <h2 id="h2" class="text-center">Login</h2>
+            <!-- .................. Form ............. -->
+            <form  id="login_form" action="http://localhost:3000/users/login" method="post">
+                <div id="test" class="div my-3">
+                    <label for="Username_input_in_login" class="form-label">Username / E-mail address</label>
+                    <input type="text" class="input form-control" id="Username_input_in_login" name="userName" placeholder="name/name@example.com">
+                </div>
+                <div  class="div mb-3">
+                    <label for="password_input" class="form-label">Password</label>
+                    <input type="password" class="input form-control" id="password_input" name="userPassword" value="123456">
+                </div>
+                <div class="div_btn text-center mb-3">
+                    <input type="submit" class="button w-50 btn btn-dark" value="Login">
+                </div> 
+            </form>
+
+            <div class="div last_div d-flex align-items-center justify-content-center">
+                <p class="me-2 position-relative" style="top: 0.5rem;">Don't have account ?</p>
+                <button class="anchor_button border-0 bg-transparent text-decoration-underline text-primary"  onclick="Go_to_register()">Register</button>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+    <!-- container for Signup -->
+    <div class="d-none container w-25 mt-5 rounded p-4" id="signUp_container"  style="background-color: antiquewhite;">
+        <div id="signUp_div" class="hide">
+            <h2 id="h2" class="text-center">Sign up</h2>
+            <!-- .................. Form ............. -->
+            <form id="signUp_form" action="http://localhost:3000/users/register" method="post" >
+                <div class="div my-3">
+                    <label for="Username_in_signUp" class="form-label">Username</label>
+                    <input type="text" class="input form-control" id="Username_in_signUp" name="userName" placeholder="name/name@example.com">
+                    <div id="userName_div_in_signUp">
+                        Invalid userName
+                    </div>
+                </div>
+                <div class="div my-3">
+                    <label for="Email_in_signUp" class="form-label">E-mail</label>
+                    <input type="email" class="input form-control" id="Email_in_signUp" name="userEmail" placeholder="name@example.com">
+                    <div id="email_div_in_signUp">
+                        Invalid Email
+                    </div>
+                </div>
+                <div class="div mb-3">
+                    <label for="password1_in_signUp" class="form-label">Password</label>
+                    <input type="password" class="input form-control" id="password1_in_signUp" name="userPassword" value="123456">
+                    <div id="password1_div_in_signUp">
+                        Invalid Password : must insert numbers only
+                    </div>
+                </div>
+                <div class="div mb-3">
+                    <label for="password2_in_signUp" class="form-label">Confirm Password</label>
+                    <input type="password" class="input form-control" id="password2_in_signUp" value="123456">
+                    <div id="password2_div_in_signUp">
+                        Invalid Password : password fields doesn't match
+                    </div>
+                </div>
+                <div class="div_btn text-center mb-3">
+                    <input type="submit" onclick="Go_to_login()" class="button w-50 btn btn-dark" value="Create Account">
+                </div>
+                    
+            
+            </form>
+
+            <div class="div last_div d-flex align-items-center justify-content-center">
+                <p class="me-2 position-relative" style="top: 0.5rem;">Already have account ?</p>
+                <button class="anchor_button border-0 bg-transparent text-decoration-underline text-primary" onclick="Go_from_register_to_login_after_creating_account()">Login</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script> -->
+    <!-- <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script> -->
+    <script src="../Js/index.js"></script>
+</body>
+</html>

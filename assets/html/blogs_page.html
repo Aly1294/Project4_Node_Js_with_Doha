@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+
+    <div >
+        <header class="p-4" style="height: 5rem; background-color:antiquewhite;">
+            
+
+                <!-- ..................... Post new blog ....................... -->
+                <!-- Button trigger modal -->
+                <button type="button" data-bs-toggle="modal" data-bs-target="#post_new_blog" class="btn fw-semibold border border-2 border-dark me-3">Post New Blog</button>
+                <!-- Modal -->
+                <div class="modal fade" id="post_new_blog" tabindex="-1">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">New Blog</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                        <form action="http://localhost:3000/blogs/newBlog" method="post">
+                            <div class="my-3">
+                                <label for="title" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="title" name="title" placeholder="Blog title">
+                            </div>
+                            <div class="my-3">
+                                <label for="author" class="form-label">Author</label>
+                                <input type="text" class="form-control" id="author" name="author" placeholder="Author name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="body" class="form-label">Body</label>
+                                <textarea class="form-control" id="body" name="body" rows="3" placeholder="Write here body of the blog"></textarea>
+                            </div>
+                            <div class="my-3">
+                                <label for="tags" class="form-label">Tags</label>
+                                <input type="text" class="form-control" id="tags" name="tags" placeholder="tags">
+                            </div>
+                            <div class="input-group mb-3" style="margin-top:2rem;">
+                                <input type="file" class="form-control" name="img" id="upload_img">
+                                <label class="input-group-text" for="upload_img">Upload</label>
+                              </div>
+                              
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <input type="submit" class="btn btn-primary" value="Save Blog">
+                              </div>
+                        </form>
+                        </div>
+
+                        
+                    </div>
+                    </div>
+                </div>
+                <!-- ........................................................... -->
+
+                <!-- ..................... Search for a specific blog ....................... -->
+                <!-- Button trigger modal -->
+                <button type="button" data-bs-toggle="modal" data-bs-target="#Search_for_a_specific_blog" class="btn fw-semibold border border-2 border-dark me-3">Search for a specific blog</button>
+                <!-- Modal -->
+                <div class="modal fade" id="Search_for_a_specific_blog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Search By</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+
+                        <div class="modal-body">
+                            <form action="http://localhost:3000/blogs/searchBlog" method="post">
+                                <!-- search by id -->
+                                <div class="my-3">
+                                    <label for="blog_id" class="form-label">Blog ID</label>
+                                    <input type="text" class="form-control" id="blog_id" name="blog_id" placeholder="256124">
+                                </div>
+                                <!-- search by author -->
+                                <div><h3 class="text-center w-100">Or</h3></div>
+                                <div class="my-3">
+                                    <label for="author" class="form-label">Author</label>
+                                    <input type="text" class="form-control" id="author" name="author" placeholder="Author name">
+                                </div>
+                                <!-- search by title -->
+                                <div><h3 class="text-center w-100">Or</h3></div>
+                                <div class="my-3">
+                                    <label for="title" class="form-label">Blog Title</label>
+                                    <input type="text" class="form-control" id="title" name="title" placeholder="Blog Title">
+                                </div>
+                                
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <input type="submit" class="btn btn-primary" value="Search">
+                                </div>
+                            </form>
+                        </div>
+
+                        
+                    </div>
+                    </div>
+                </div>
+                <!-- ........................................................... -->
+                
+            
+
+
+
+
+                <!-- .................... update a specific blog ....................... -->
+                <!-- Button trigger modal -->
+                <button type="button" data-bs-toggle="modal" data-bs-target="#update_a_specific_blog" class="btn fw-semibold border border-2 border-dark me-3">Update a specific blog</button>
+                <!-- Modal -->
+                <div class="modal fade" id="update_a_specific_blog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Blog By</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+
+                        <div class="modal-body">
+                            <!-- form 1 Search for wanted blog to update it -->
+                            <form action="http://localhost:3000/blogs/search2Blog" method="post">
+                                <!-- update by id -->
+                                <div class="my-3">
+                                    <label for="blog_id" class="form-label">Blog ID</label>
+                                    <input type="text" class="form-control" id="blog_id" name="blog_id" placeholder="256124">
+                                </div>
+                                
+                                  <div class="position-relative" >
+                                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                                    <input style="position:absolute; right: 0rem;" type="submit" class="btn btn-primary" value="Search">
+                                </div>
+                            </form>
+                            <!-- form 2 new body -->
+                            <form class="mt-5" action="http://localhost:3000/blogs/updateBlog" method="post">
+                                <div class="my-3">
+                                    <label for="title" class="form-label">Title</label>
+                                    <input type="text" class="form-control" id="title" name="title" placeholder="Blog title">
+                                </div>
+                                <div class="my-3">
+                                    <label for="author" class="form-label">Author</label>
+                                    <input type="text" class="form-control" id="author" name="author" placeholder="Author name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="body" class="form-label">Body</label>
+                                    <textarea class="form-control" id="body" name="body" rows="3" placeholder="Write here body of the blog"></textarea>
+                                </div>
+                                <div class="my-3">
+                                    <label for="tags" class="form-label">Tags</label>
+                                    <input type="text" class="form-control" id="tags" name="tags" placeholder="tags">
+                                </div>
+                                <div class="input-group mb-3" style="margin-top:2rem;">
+                                    <input type="file" class="form-control" name="img" id="upload_img">
+                                    <label class="input-group-text" for="upload_img">Upload</label>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <input type="submit" class="btn btn-primary" value="Update">
+                                </div>
+
+
+                            </form>
+                        </div>
+
+                        
+                    </div>
+                    </div>
+                </div>
+                <!-- ........................................................... -->
+                
+
+<!-- .................... delete a specific blog ....................... -->
+                <!-- Button trigger modal -->
+                <button type="button" data-bs-toggle="modal" data-bs-target="#delete_a_specific_blog" class="btn fw-semibold border border-2 border-dark me-3">Delete a specific blog</button>
+                <!-- Modal -->
+                <div class="modal fade" id="delete_a_specific_blog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Blog By</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+
+                        <div class="modal-body">
+                            <!-- form 1 Search for wanted blog to update it -->
+                            <form action="http://localhost:3000/blogs/deleteBlog" method="post">
+                                <!-- delete by id -->
+                                <div class="my-3">
+                                    <label for="blog_id" class="form-label">Blog ID</label>
+                                    <input type="text" class="form-control" id="blog_id" name="blog_id" placeholder="256124">
+                                </div>
+                                
+                                  <div class="position-relative" >
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <input style="position:absolute; right: 0rem;" type="submit" class="btn btn-primary" value="Delete">
+                                </div>
+                            </form>
+                    
+                        </div>
+
+                        
+                    </div>
+                    </div>
+                </div>
+                <!-- ........................................................... -->
+
+
+
+
+
+
+
+        </header>
+        <main style="background-color: rgb(205, 226, 245);">
+            <h1 class="py-2 text-center">Blogs</h1>
+            
+            
+            <!-- <section class="ps-5 pt-3 fw-semibold">
+
+            </section> -->
+        </main>
+    </div>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

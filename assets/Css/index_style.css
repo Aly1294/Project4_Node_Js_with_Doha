@@ -1,0 +1,73 @@
+#login_container,#signUp_container{
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius:0.5rem ;
+    /* border: 2px solid black; */
+    margin-bottom: 1rem;
+}
+
+
+#login_div,#signUp_div{
+    margin: 1rem 2rem;
+    padding: 1rem 0.5rem;
+    /* border: 2px solid rgb(122, 32, 32); */
+
+}
+
+.input{
+    display: block;
+    border-radius: 0.5rem;
+    height: 1.5rem;
+    width: 95%;
+    margin-top: 0.2rem;
+}
+
+#h2{
+    text-align: center;
+}
+
+
+.div_btn{
+    text-align: center;
+    margin-top: 1rem;
+    /* border: 2px solid rgb(31, 22, 22); */
+
+
+}
+
+
+.button{
+    background-color: black;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: antiquewhite;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.last_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid rgb(122, 32, 32); */
+}
+.anchor_button{
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    color: blue;
+    font-size: 0.9rem;
+}
+
+/* Should deleted */
+.div {
+    margin-bottom: 0.5rem;
+    
+    /* border: 2px solid rgb(122, 32, 32); */
+
+}
+
+
+
+
